@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chest</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100vw;
+            height: 100vh;
+        }
+
+        img {
+            image-rendering: pixelated;
+            max-width: 80%;
+            max-height: 80%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="chest" src="./Img/chest_closed.png" alt="Chest">
+
+    <audio id="chestSound" src="./Sound/chest_locked.mp3"></audio>
+
+    <script>
+        const chest = document.getElementById("chest");
+        const sound = document.getElementById("chestSound");
+
+        chest.addEventListener("click", () => {
+            sound.currentTime = 0; // Rejoue le son même si on reclique
+            sound.play();
+        });
+    </script>
+
+</body>
+</html>
